@@ -1,29 +1,15 @@
 package com.sih.sanketuvach
 
 import android.content.Intent
-import android.content.res.Resources.Theme
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ElevatedButton
-import androidx.compose.material3.FilledTonalButton
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -31,27 +17,24 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.content.ContextCompat.startActivity
-import com.sih.sanketuvach.ui.theme.Primary
 import com.sih.sanketuvach.ui.theme.SanketuvachTheme
 import com.sih.sanketuvach.ui.theme.Secondary
-import com.sih.sanketuvach.ui.theme.YellowPrimary
-import kotlinx.coroutines.delay
 
-class MainActivity : ComponentActivity() {
+class HomePageActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             SanketuvachTheme {
-                MainScreen()
+                HomeScreen()
             }
         }
     }
 }
 
 @Composable
-fun MainScreen() {
+fun HomeScreen() {
     val context = LocalContext.current
+
     // Center the content in the screen
     Box(
         modifier = Modifier.fillMaxSize(),
@@ -75,7 +58,7 @@ fun MainScreen() {
             Button(
                 onClick = {
                     /* Navigate to ISL to Text Activity */
-                    context.startActivity(Intent(context, HomePageActivity::class.java))
+                    context.startActivity(Intent(context, ISLToTextActivity::class.java))
                 },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -87,13 +70,13 @@ fun MainScreen() {
                     contentColor = Color.White         // Text color
                 ),
             ) {
-                Text(text = "Guest Mode", color = Color.Black)
+                Text(text = "ISL to Text", color = Color.Black)
             }
 
             Button(
                 onClick = {
                     /* Navigate to ISL to Text Activity */
-                    context.startActivity(Intent(context, OnboardingActivity::class.java))
+                    context.startActivity(Intent(context, TextToISLActivity::class.java))
                 },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -105,7 +88,25 @@ fun MainScreen() {
                     contentColor = Color.White         // Text color
                 ),
             ) {
-                Text(text = "Sign in", color = Color.Black)
+                Text(text = "Text to ISL", color = Color.Black)
+            }
+
+            Button(
+                onClick = {
+                    /* Navigate to ISL to Text Activity */
+                    context.startActivity(Intent(context, VideoCallActivity::class.java))
+                },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+                    .size(150.dp, 50.dp),
+                shape = RoundedCornerShape(8.dp),
+                colors = ButtonDefaults.elevatedButtonColors(
+                    containerColor = Color(Secondary.value), // Background color
+                    contentColor = Color.White         // Text color
+                ),
+            ) {
+                Text(text = "Video Call", color = Color.Black)
             }
         }
     }

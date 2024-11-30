@@ -58,7 +58,7 @@ fun SanketuvachTheme(
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }
-
+/*
     val fontFamily = FontFamily(
         Font(R.font.segoeuithis, FontWeight.Normal),
         Font(R.font.segoeuithibd, FontWeight.Bold)
@@ -66,26 +66,22 @@ fun SanketuvachTheme(
 
     val typography = Typography(
         bodyMedium = TextStyle(
-            fontFamily = fontFamily, fontWeight = FontWeight.Normal, fontSize = 12.sp/*...*/
+            fontFamily = fontFamily, fontWeight = FontWeight.Normal, fontSize = 12.sp*//*...*//*
         ),
         bodyLarge = TextStyle(
             fontFamily = fontFamily,
             fontWeight = FontWeight.Bold,
             letterSpacing = 1.sp,
-            /*...*/
+            *//*...*//*
         ),
         headlineMedium = TextStyle(
-            fontFamily = fontFamily, fontWeight = FontWeight.SemiBold/*...*/
+            fontFamily = fontFamily, fontWeight = FontWeight.SemiBold*//*...*//*
         ),
-    )
-
-    /*
-
-    * */
+    )*/
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = typography,
+        typography = Typography,
         content = content
     )
 }

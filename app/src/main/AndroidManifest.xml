@@ -26,6 +26,8 @@
         <activity android:name=".ISLToTextActivity" />
         <activity android:name=".TextToISLActivity" />
         <activity android:name=".VideoCallActivity" />
+        <activity android:name=".OnboardingActivity" />
+        <activity android:name=".HomePageActivity" />
     </application>
 
 </manifest>
