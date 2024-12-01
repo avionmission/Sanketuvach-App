@@ -52,7 +52,7 @@ fun mainMenu(){
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        Row {
+        Column {
             Button(
                 onClick = { /*TODO*/ },
                 modifier = Modifier.fillMaxWidth()
