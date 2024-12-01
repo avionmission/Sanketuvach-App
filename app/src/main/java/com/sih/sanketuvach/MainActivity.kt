@@ -93,7 +93,7 @@ fun MainScreen() {
             Button(
                 onClick = {
                     /* Navigate to ISL to Text Activity */
-                    context.startActivity(Intent(context, OnboardingActivity::class.java))
+                    context.startActivity(Intent(context, MenuForSel::class.java))
                 },
                 modifier = Modifier
                     .fillMaxWidth()
